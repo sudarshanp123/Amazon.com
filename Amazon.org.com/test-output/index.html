@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,7 +21,8 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -50,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-TestSuite" class="navigator-link ">
-                    <span>C:\Users\Sudarshan\Desktop\Selenium_Projects\Amazon.org.com\testng.xml</span>
+                    <span>C:\Users\Sudarshan\git\repository\Amazon.org.com\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +104,7 @@
                     <div class="method-list-content failed suite-TestSuite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestSuite" title="TestClasses.TCLoginToAmazon" class="method navigator-link" hash-for-method="Failtestcase">Failtestcase</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-TestSuite" title="TestClasses.TCLoginToAmazon" class="method navigator-link" hash-for-method="addproducttocard">addproducttocard</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-TestSuite -->
@@ -140,13 +141,34 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Failtestcase">
-                  </a> <!-- Failtestcase -->
-                  <span class="method-name">Failtestcase</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [3] but found [2]
-	at TestClasses.TCLoginToAmazon.Failtestcase(TCLoginToAmazon.java:38)
+                  <a name="addproducttocard">
+                  </a> <!-- addproducttocard -->
+                  <span class="method-name">addproducttocard</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=137.0.7151.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b80414eb9599a030996862d793b0d1ec, sendKeysToElement {id=f.F97A01E80EF5E6D58180389B39813DD6.d.9D57B74CB6B529B64FBB03A3FDE808A5.e.43, value=[Ljava.lang.CharSequence;@e8e0dec}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SUDARS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52901}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52901/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b80414eb9599a030996862d793b0d1ec)] -&gt; xpath: //input[@type=&apos;password&apos;]]
+Session ID: b80414eb9599a030996862d793b0d1ec
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
+	at POMClasses.LoginPagePOM.logintoAmazon(LoginPagePOM.java:48)
+	at TestClasses.TCLoginToAmazon.addproducttocard(TCLoginToAmazon.java:34)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames
+... Removed 36 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -170,7 +192,7 @@
         </div> <!-- panel TestSuite -->
         <div panel-name="test-xml-TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Sudarshan\Desktop\Selenium_Projects\Amazon.org.com\testng.xml</span>
+            <span class="header-content">C:\Users\Sudarshan\git\repository\Amazon.org.com\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -226,16 +248,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'login')
 data.setCell(0, 2, 'TestClasses.TCLoginToAmazon')
-data.setCell(0, 3, 13096);
+data.setCell(0, 3, 13337);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Failtestcase')
+data.setCell(1, 1, 'addproducttocard')
 data.setCell(1, 2, 'TestClasses.TCLoginToAmazon')
-data.setCell(1, 3, 11);
+data.setCell(1, 3, 6821);
 window.suiteTableData['TestSuite']= { tableData: data, tableDiv: 'times-div-TestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-TestSuite">
               </div> <!-- times-div-TestSuite -->
             </div> <!-- times-div -->
@@ -268,22 +290,22 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">login</span>
-                <span class="method-start">2593 ms</span>
+                <span class="method-start">3030 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">openbrowser</span>
-                <span class="method-start">15900 ms</span>
+                <span class="method-start">16529 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">Failtestcase</span>
-                <span class="method-start">18384 ms</span>
+                <span class="method-name">addproducttocard</span>
+                <span class="method-start">18473 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
+              <div class="configuration-suite after">
                 <span class="method-name">logout</span>
-                <span class="method-start">18495 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">26336 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -28,6 +28,7 @@ public class ScreenshotUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return destPath;
+        String absolutepath= destFile.getAbsolutePath();
+        return absolutepath;
     }
 }

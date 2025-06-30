@@ -48,19 +48,27 @@ public class ExtentTestNGListener implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-//		WebDriver driver = getDriver(result);
-//		String path = ScreenshotUtil.captureScreenshot(driver, result.getMethod().getMethodName() + "_pass");
+		WebDriver driver = getDriver(result);
+		String path = ScreenshotUtil.captureScreenshot(driver, result.getMethod().getMethodName() + "_pass");
 //		test.get().pass("Test Passed").addScreenCaptureFromPath(path);
-		attachScreenshot(result, "✅ Test Passed");
+//    	attachScreenshot(result, "✅ Test Passed");
+		test.get().pass("Test Passed",MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+//		test.get().pass("Test Passed", MediaEntityBuilder.createScreenCaptureFromPath(path).build()); // ✅ Screenshot attached
+
+	
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		WebDriver driver = getDriver(result);
 		String path = ScreenshotUtil.captureScreenshot(driver, result.getMethod().getMethodName() + "_fail");
-		test.get().fail(result.getThrowable()).addScreenCaptureFromPath(path);
+		test.get().fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+		
+		
 //		attachScreenshot(result, "❌ Test Failed: " + result.getThrowable());
-//		test.get().fail(MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+//    	test.get().fail("Test Failed",MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+	
+	
 	}
 
 	@Override
