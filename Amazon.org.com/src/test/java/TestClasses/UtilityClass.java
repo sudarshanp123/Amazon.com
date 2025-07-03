@@ -43,8 +43,8 @@ public class UtilityClass  {
 	public WebElement explicitwait(WebDriver driver,WebElement ele) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		return wait.until(ExpectedConditions.visibilityOf(ele));
-		
+
 	}
-	
-	
+
+
 }

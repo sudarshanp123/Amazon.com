@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPagePOM {
 	public static WebDriver driver;
-    // Find all webelements on Login Page
+	// Find all webelements on Login Page
 	@FindBy (xpath="//button[text()='Continue shopping']")
 	private WebElement continueshopping;
 	@FindBy (xpath="//div[@id='nav-link-accountList']")
@@ -29,15 +29,15 @@ public class LoginPagePOM {
 	private WebElement movetoaccount;
 	@FindBy (xpath="//span[text()='Sign Out']")
 	private WebElement signoutbutton;
-	
-	
-	
+
+
+
 	// created constructor to access the private data members
 	public LoginPagePOM(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void logintoAmazon(String user, String pass) {
 		continueshopping.click();
 		signinlink.click();
@@ -47,18 +47,18 @@ public class LoginPagePOM {
 		continuebutton.click();
 		passwordtextbox.sendKeys(pass);
 		siginbutton.click();
-				
+
 	}
-	
+
 	public void logoutfromAmazon() {
-		
+
 		Actions act = new Actions(driver);
 		act.moveToElement(movetoaccount).perform();
 		act.moveToElement(signoutbutton).click().perform();
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 }

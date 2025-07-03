@@ -16,13 +16,11 @@ import org.testng.annotations.*;
 public class BaseClass {
 
 	public  WebDriver driver;
-	
+
 	public LoginPagePOM lp;
 	public AddProductToCardPOM ac;
 	public UtilityClass ut;
-//	public WebDriver getDriver() {
-//		return driver;
-//	}
+
 	@BeforeClass
 	public void openbrowser() {
 		ChromeOptions options = new ChromeOptions();
@@ -35,25 +33,16 @@ public class BaseClass {
 		lp = new LoginPagePOM(driver);
 		ac = new AddProductToCardPOM(driver);
 		ut = new UtilityClass(driver);
-		
+
 	}
-//	@BeforeMethod
-//	public void navigatetourl() {
-//	
-////		lp.logintoAmazon("7767093084", "Spawar@9090");
-//	}
-	
+
+
 	@AfterClass
 	public void logout() {
 		lp.logoutfromAmazon();
 		driver.quit();
 	}
-// 
-//	@AfterTest
-//	public void browserteardown() {
-//		driver.quit();;
-//
-//	}
+
 
 
 }
