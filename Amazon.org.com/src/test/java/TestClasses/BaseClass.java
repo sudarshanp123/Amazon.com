@@ -15,27 +15,45 @@ import org.testng.annotations.*;
 
 public class BaseClass {
 
-	public static WebDriver driver;
-	LoginPagePOM lp = new LoginPagePOM(driver);
-	AddProductToCardPOM ac = new AddProductToCardPOM(driver);
-	UtilityClass ut = new UtilityClass(driver);
-	@BeforeMethod
+	public  WebDriver driver;
+	
+	public LoginPagePOM lp;
+	public AddProductToCardPOM ac;
+	public UtilityClass ut;
+//	public WebDriver getDriver() {
+//		return driver;
+//	}
+	@BeforeClass
 	public void openbrowser() {
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(options);		
 		options.addArguments("--disable-notifications");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.get("https://www.amazon.com/");
-//		lp.logintoAmazon("7767093084", "Spawar@9090");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		lp = new LoginPagePOM(driver);
+		ac = new AddProductToCardPOM(driver);
+		ut = new UtilityClass(driver);
+		
 	}
-
-	@AfterSuite
+//	@BeforeMethod
+//	public void navigatetourl() {
+//	
+////		lp.logintoAmazon("7767093084", "Spawar@9090");
+//	}
+	
+	@AfterClass
 	public void logout() {
-		driver.quit();;
-
+		lp.logoutfromAmazon();
+		driver.quit();
 	}
+// 
+//	@AfterTest
+//	public void browserteardown() {
+//		driver.quit();;
+//
+//	}
 
 
 }
