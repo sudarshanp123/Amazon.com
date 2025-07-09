@@ -8,9 +8,9 @@
     <classes>
       <class name="TestClasses.TCLoginToAmazon">
         <methods>
+          <include name="login"/>
           <include name="openbrowser"/>
           <include name="logout"/>
-          <include name="addproducttocard"/>
         </methods>
       </class> <!-- TestClasses.TCLoginToAmazon -->
     </classes>

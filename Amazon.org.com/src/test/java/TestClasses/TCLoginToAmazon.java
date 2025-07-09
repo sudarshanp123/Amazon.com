@@ -13,9 +13,12 @@ import POMClasses.LoginPagePOM;
 
 
 public class TCLoginToAmazon extends BaseClass {
-	public LoginPagePOM lp;
-	public AddProductToCardPOM ac;
-
+    public LoginPagePOM lp;
+    public AddProductToCardPOM ac;
+    
+	public WebDriver getDriver() {
+		return driver;
+	}
 
 	@Test(priority=0)
 	public void login() {
@@ -26,24 +29,28 @@ public class TCLoginToAmazon extends BaseClass {
 		String expetectedtitle = "Amazon.com. Spend less. Smile more.";
 		Assert.assertEquals(expetectedtitle, driver.getTitle());
 		Reporter.log("user is logged in",true);
-
+	
 	}
 
-	@Test(priority=1)
+	@Test(priority=1,invocationCount = 3)
 	public void addproducttocard() {
 		lp = new LoginPagePOM(driver);
-		ac = new AddProductToCardPOM(driver);		
+	    ac = new AddProductToCardPOM(driver);       
 		ac.entertextinsearchbox();
 		ac.clicksearchicon();
 		ac.verifySearchedmobile();
+		ac.selectradiobutton();
+		ut.explicitwait(driver,ac.getradiobutton());
+		ut.explicitwait(driver, ac.addtocardbutton());
 		ac.addproducttocart();
-
 		WebElement text = ac.verifyproductaddedtocard();
 		ut.explicitwait(driver, text);		
 		Assert.assertEquals(text.getText(), "Added to cart");
-		Reporter.log("Produdct added to card", true);	
-	}
+		Reporter.log("Produdct added to card", true);
+		
 
+	}
+	
 
 
 

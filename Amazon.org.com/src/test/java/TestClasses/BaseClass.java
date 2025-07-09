@@ -11,6 +11,7 @@ import POMClasses.AddProductToCardPOM;
 import POMClasses.LoginPagePOM;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import org.testng.Reporter;
 import org.testng.annotations.*;
 
 public class BaseClass {
@@ -39,7 +40,13 @@ public class BaseClass {
 
 	@AfterClass
 	public void logout() {
+		ut.explicitwait(driver, ac.gotocardbutton());
+		ac.gotocartpage();
+		ut.explicitwait(driver,ac.deletebutton());
+		ac.deleteaddedproduct();
+		Reporter.log("Product deleted successfully",true);
 		lp.logoutfromAmazon();
+		Reporter.log("User logged out successfully",true);
 		driver.quit();
 	}
 

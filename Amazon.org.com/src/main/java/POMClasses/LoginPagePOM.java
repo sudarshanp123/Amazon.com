@@ -39,7 +39,7 @@ public class LoginPagePOM {
 	}
 
 	public void logintoAmazon(String user, String pass) {
-		continueshopping.click();
+//		continueshopping.click();
 		signinlink.click();
 		usernametextbox.sendKeys(user);
 		countrycodedropdown.click();
