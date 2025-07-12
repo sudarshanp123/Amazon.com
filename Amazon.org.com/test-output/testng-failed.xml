@@ -8,8 +8,10 @@
     <classes>
       <class name="TestClasses.TCLoginToAmazon">
         <methods>
-          <include name="login"/>
+          <include name="verifylogin"/>
+          <include name="verifyDeleteAddress"/>
           <include name="openbrowser"/>
+          <include name="verifyAddAddress"/>
           <include name="logout"/>
         </methods>
       </class> <!-- TestClasses.TCLoginToAmazon -->

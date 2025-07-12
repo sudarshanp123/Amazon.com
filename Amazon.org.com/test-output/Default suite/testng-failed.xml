@@ -5,9 +5,11 @@
     <classes>
       <class name="TestClasses.TCLoginToAmazon">
         <methods>
+          <include name="verifylogin"/>
+          <include name="verifyRemoveProduct"/>
           <include name="openbrowser"/>
           <include name="logout"/>
-          <include name="addproducttocard"/>
+          <include name="verifyaddproducttocard"/>
         </methods>
       </class> <!-- TestClasses.TCLoginToAmazon -->
     </classes>

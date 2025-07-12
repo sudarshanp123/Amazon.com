@@ -13,20 +13,7 @@ public class ExtentTestNGListener implements ITestListener {
 
 	private static ExtentReports extent;
 	private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
-	private void attachScreenshot(ITestResult result, String statusMessage) {
-		WebDriver driver = getDriver(result);
-		if (driver != null) {
-			String path = ScreenshotUtil.captureScreenshot(driver, result.getMethod().getMethodName());
-			try {
-				test.get().log(Status.INFO, statusMessage)
-				.addScreenCaptureFromPath(path);
-			} catch (Exception e) {
-				test.get().log(Status.WARNING, "Screenshot could not be attached");
-			}
-		} else {
-			test.get().log(Status.WARNING, "Driver is null. Screenshot not attached.");
-		}
-	}
+
 	public static String getdate() {
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
 		return date.format(new Date()); 

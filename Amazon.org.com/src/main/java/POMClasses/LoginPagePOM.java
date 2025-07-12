@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+
+import com.aventstack.extentreports.model.Report;
 
 public class LoginPagePOM {
 	public static WebDriver driver;
@@ -39,15 +42,30 @@ public class LoginPagePOM {
 	}
 
 	public void logintoAmazon(String user, String pass) {
-//		continueshopping.click();
-		signinlink.click();
-		usernametextbox.sendKeys(user);
-		countrycodedropdown.click();
-		countrycode.click();
-		continuebutton.click();
-		passwordtextbox.sendKeys(pass);
-		siginbutton.click();
 
+		if(driver.getTitle().equals("Amazon.com")) {
+			continueshopping.click();
+			signinlink.click();
+			usernametextbox.sendKeys(user);
+			countrycodedropdown.click();
+			countrycode.click();
+			continuebutton.click();
+			passwordtextbox.sendKeys(pass);
+			siginbutton.click();
+		}
+		else if(driver.getTitle().equals("Amazon.com. Spend less. Smile more.")) {
+			signinlink.click();
+			usernametextbox.sendKeys(user);
+			countrycodedropdown.click();
+			countrycode.click();
+			continuebutton.click();
+			passwordtextbox.sendKeys(pass);
+			siginbutton.click();
+		}
+		else {
+			Reporter.log("Wrong page displayed",true);
+		}
+		
 	}
 
 	public void logoutfromAmazon() {
